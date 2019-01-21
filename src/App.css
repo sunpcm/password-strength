@@ -1,0 +1,82 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+
+
+#password-strength {
+
+  width: 300px;
+
+  border: 1px solid #c6c6c6;
+  box-sizing: border-box;
+  color: #090809;
+  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-size: 18px;
+  line-height: 1;
+  position: relative;
+}
+
+#password-strength .password-input {
+  border: none;
+  box-sizing: border-box;
+  font-size: 18px;
+  padding: 14px 0 12px 14px;
+  width: calc(85% - 28px);
+}
+
+#password-strength .password-input:focus {
+  outline: none
+}
+
+#password-strength .password-strength-bar {
+  box-sizing: border-box;
+  height: 2px;
+  position: relative;
+  top: 1px;
+  right: 1px;
+  transition: width 300ms ease-out;
+  width: 0;
+}
+
+#password-strength .password-strength-info {
+  color: transparent;
+  font-style: italic;
+  padding: 14px 12px;
+  position: absolute;
+  top: 1px;
+  right: 0;
+  text-align: right;
+  transition: color 250ms ease-in-out;
+  width: 15%;
+}
