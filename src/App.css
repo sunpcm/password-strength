@@ -1,43 +1,5 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-
-
 #password-strength {
-
   width: 300px;
-
   border: 1px solid #c6c6c6;
   box-sizing: border-box;
   color: #090809;
@@ -59,15 +21,7 @@
   outline: none
 }
 
-#password-strength .password-strength-bar {
-  box-sizing: border-box;
-  height: 2px;
-  position: relative;
-  top: 1px;
-  right: 1px;
-  transition: width 300ms ease-out;
-  width: 0;
-}
+
 
 #password-strength .password-strength-info {
   color: transparent;
@@ -79,4 +33,67 @@
   text-align: right;
   transition: color 250ms ease-in-out;
   width: 15%;
+}
+
+.password-strength.strength-0 .password-input {
+  color: #D1462F !important;
+}
+
+.password-strength.strength-0 .password-strength-info {
+  color: #D1462F !important;
+}
+
+.password-strength.strength-1 .password-strength-info {
+  color: #D1462F !important;
+}
+
+.password-strength.strength-2 .password-strength-info {
+  color: #57B8FF !important;
+}
+
+.password-strength.strength-3 .password-strength-info {
+  color: #57B8FF !important;
+}
+
+.password-strength.strength-4 .password-strength-info {
+  color: #2FBF71 !important;
+}
+
+.password-strength.strength-none .password-strength-bar {
+  width: 0 !important;
+}
+
+.password-strength.strength-0 .password-strength-bar {
+  background: #D1462F;
+  width: 20% !important;
+}
+
+.password-strength.strength-1 .password-strength-bar {
+  background: #D1462F;
+  width: 40% !important;
+}
+
+.password-strength.strength-2 .password-strength-bar {
+  background: #57B8FF;
+  width: 60% !important;
+}
+
+.password-strength.strength-3 .password-strength-bar {
+  background: #57B8FF;
+  width: 80% !important;
+}
+
+.password-strength.strength-4 .password-strength-bar {
+  background: #2FBF71;
+  width: calc(100% + 2px) !important;
+}
+
+#password-strength .password-strength-bar {
+  box-sizing: border-box;
+  height: 2px;
+  position: relative;
+  top: 1px;
+  right: 1px;
+  transition: width 300ms ease-out;
+  width: 0;
 }

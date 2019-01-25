@@ -5,7 +5,7 @@ class PasswordStrength extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            score: 0,
+            score: 'none',
             isValid: false,
             password: '',
         }
@@ -21,18 +21,17 @@ class PasswordStrength extends Component {
 
 
     isTooShort(password, minLength) {
+        console.log(password.length)
         return password.length < minLength;
     }
 
-    handleChange() {
+    handleChange(e) {
+
         const { changeCallback, minScore, userInputs, minLength } = this.props;
-        const password = this.reactPasswordStrengthInput.value;
+        const password = e.target.value//this.reactPasswordStrengthInput.value;
 
         let score = 0;
         let result = null;
-
-        // always sets a zero score when min length requirement is not met
-        // avoids unnecessary zxcvbn computations (CPU intensive)
         if (this.isTooShort(password, minLength) === false) {
             result = zxcvbn(password, userInputs);
             score = result.score;
@@ -50,14 +49,24 @@ class PasswordStrength extends Component {
     }
 
     render() {
+
+        const { score, password } = this.state
+        const { scoreWords, minLength, } = this.props
+        const strengthDesc = (
+            this.isTooShort(password, minLength)
+                ? 'short'
+                : scoreWords[score]
+        );
+
         return (
-            <div id="password-strength" className="password-strength">
+            <div id="password-strength" className={`password-strength strength-${score}`}>
                 <input className="password-input"
                     type="password"
                     placeholder="input your password"
+                    onChange={(e) => this.handleChange(e)}
                 />
                 <div className="password-strength-bar"></div>
-                <span className="password-strength-info">weak</span>
+                <span className="password-strength-info">{strengthDesc}</span>
             </div>
         );
     }
